@@ -6,9 +6,10 @@ jobs:
     container: python:3.8
     steps:
       - uses: actions/checkout@v2
-      - name : ci_run
+      
+      - name: ci_run
         run: |
           pip install -r requirements.txt
+          pip install flake8
           pytest tests/
-          
-    
+          flake8 .
